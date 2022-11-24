@@ -75,16 +75,16 @@ class Cw
     time_deltas.sort.slice(0, half_size).sum / half_size.to_f
   end
 
+  # whether to translate captured tokens into a character
   def end_char?
-    # time_delta > 0.8
     puts "time_delta: #{time_delta}"
     puts "median_time: #{median_time}"
 
     time_delta > (median_time * 2)
   end
 
+  # whether a word is ready to be captured
   def end_word?
-    # time_delta > 1.8
     time_delta > (median_time * 3)
   end
 
